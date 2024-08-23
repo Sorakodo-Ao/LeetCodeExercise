@@ -1,7 +1,7 @@
 package com.caiwei.object.sort;
 
 import org.junit.jupiter.api.Test;
-
+//快排
 public class QuickSort {
     @Test
     void sort() {

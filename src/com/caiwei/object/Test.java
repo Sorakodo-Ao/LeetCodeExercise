@@ -11,5 +11,8 @@ public class Test {
         list.add("3");
         System.out.println(list.size());
         System.out.println(list.get(0));
+
+        System.out.println(Integer.MAX_VALUE);
+        System.out.println(Integer.min(2,6));
     }
 }
