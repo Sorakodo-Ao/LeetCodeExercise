@@ -1,4 +1,4 @@
-package com.caiwei.object.abandon;
+package com.caiwei.object.abandonThinking;
 
 
 import org.junit.jupiter.api.Test;
