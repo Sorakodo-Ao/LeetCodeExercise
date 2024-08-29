@@ -36,13 +36,26 @@ public class LeetCode77 {
         return result;
     }
 
+    /*    public void backtracking(int n, int k, int startIndex, List<Integer> path, List<List<Integer>> result) {
+            if (path.size() == k) {
+                System.out.println("path = " + path.toString());
+                result.add(new ArrayList<>(path));
+                return;
+            }
+            for (int i = startIndex; i <= n; i++) {
+                path.add(i);
+                backtracking(n, k, i + 1, path, result);
+                path.remove(Integer.valueOf(i));
+            }
+        }*/
+    //剪枝操作
     public void backtracking(int n, int k, int startIndex, List<Integer> path, List<List<Integer>> result) {
         if (path.size() == k) {
             System.out.println("path = " + path.toString());
             result.add(new ArrayList<>(path));
             return;
         }
-        for (int i = startIndex; i <= n; i++) {
+        for (int i = startIndex; i <=  n - (k - path.size()) + 1; i++) {
             path.add(i);
             backtracking(n, k, i + 1, path, result);
             path.remove(Integer.valueOf(i));
