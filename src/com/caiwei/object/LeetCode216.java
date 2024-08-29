@@ -54,6 +54,9 @@ public class LeetCode216 {
         }*/
     //剪枝and优化
     public void backtracking(int length, int startIndex, int k, int target, int sum) {
+        if(sum > target){
+            return;
+        }
         if (path.size() == k) {
             if (sum == target) {
                 result.add(new ArrayList<>(path));
