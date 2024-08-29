@@ -2,9 +2,7 @@ package com.caiwei.object;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 //两个数组的交集
 public class LeetCode349 {
@@ -54,19 +52,20 @@ public class LeetCode349 {
         if (nums1.length == 0 || nums2.length == 0) {
             return new int[]{0};
         }
-        int[] resultArray = new int[1005];
+        int[] arr = new int[1005];
         for (int param : nums1) {
-            resultArray[param] = 1;
+            arr[param] = 1;
         }
-        List<Integer> list = new ArrayList<>();
+        Set<Integer> resultSet = new HashSet<>();
         for (int i = 0; i < nums2.length; i++) {
-            if (resultArray[nums2[i]] == 1 && !list.contains(nums2[i])) {
-                list.add(nums2[i]);
+            if(arr[nums2[i]] == 1){
+                resultSet.add(nums2[i]);
             }
         }
-        int[] result = new int[list.size()];
-        for (int i = 0; i < list.size(); i++) {
-            result[i] = list.get(i);
+        int[] result = new int[resultSet.size()];
+        int index = 0;
+        for (Integer param : resultSet) {
+            result[index++] = param;
         }
         return result;
     }
