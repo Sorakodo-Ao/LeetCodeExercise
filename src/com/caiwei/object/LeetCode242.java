@@ -64,7 +64,7 @@ public class LeetCode242 {
         }
         return true;
     }*/
-    public boolean isAnagram(String s, String t) {
+    /*public boolean isAnagram(String s, String t) {
         //字符串为空，false
         if (s == null || s.equals("") || t == null || t.equals("")) {
             return false;
@@ -96,5 +96,36 @@ public class LeetCode242 {
             }
         }
         return flag;
+    }*/
+    //再数组简化
+    public boolean isAnagram(String s, String t) {
+        //字符串为空，false
+        if (s == null || s.equals("") || t == null || t.equals("")) {
+            return false;
+        }
+        //字符串长度不相等，false
+        if (s.length() != t.length()) {
+            return false;
+        }
+        //两个字符串相等，true;
+        if (s.equals(t)) {
+            return true;
+        }
+        //s 和 t 仅包含小写字母
+        int[] arr = new int[26];
+        for (int i = 0; i < s.length(); i++) {
+            int index = s.charAt(i) -'a';
+            arr[index]++;
+        }
+        for (int i = 0; i < t.length(); i++) {
+            int index = t.charAt(i) -'a';
+            arr[index]--;
+        }
+        for (int i : arr) {
+            if( i !=0){
+                return false;
+            }
+        }
+        return true;
     }
 }

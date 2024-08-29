@@ -28,5 +28,8 @@ public class Test {
         System.out.println(Objects.equals(map.get("a"), map1.get("a")));*/
         int[] arr = new int[2];
         System.out.println(arr[0]);
+        char i = 'z';
+        int index = i - 'a';
+        System.out.println(index);
     }
 }
