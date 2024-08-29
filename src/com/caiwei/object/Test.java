@@ -1,6 +1,7 @@
 package com.caiwei.object;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Objects;
 
@@ -26,10 +27,11 @@ public class Test {
         Map<String, Integer> map1 = new HashMap<>();
         map1.put("a", 3);
         System.out.println(Objects.equals(map.get("a"), map1.get("a")));*/
-        int[] arr = new int[2];
-        System.out.println(arr[0]);
-        char i = 'z';
-        int index = i - 'a';
-        System.out.println(index);
+        Map<String, Integer> map = new HashMap<>();
+        map.put("a",1);
+        map.put("b",2);
+        map.forEach((key,value)->{
+            System.out.println("key = "+ key + " value = " + value);
+        });
     }
 }
