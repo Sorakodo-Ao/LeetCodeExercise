@@ -29,26 +29,43 @@ public class LeetCode216 {
 
     public List<List<Integer>> combinationSum3(int k, int n) {
         int length = 9;
-        backtracking(length, 1, k, n);
+        /*backtracking(length, 1, k, n);*/
+        backtracking(length, 1, k, n, 0);
         return result;
     }
 
-    public void backtracking(int length, int startIndex, int k, int sum) {
-        if (path.size() == k) {
-            int pathSum = 0;
-            for (Integer pathParam : path) {
-                pathSum += pathParam;
+    /*    public void backtracking(int length, int startIndex, int k, int sum) {
+            if (path.size() == k) {
+                int pathSum = 0;
+                for (Integer pathParam : path) {
+                    pathSum += pathParam;
+                }
+                if (pathSum == sum) {
+                    //path 的元素和等于sum
+                    result.add(new ArrayList<>(path));
+                }
+                return;
             }
-            if (pathSum == sum) {
-                //path 的元素和等于sum
+            for (int i = startIndex; i <= length; i++) {
+                path.add(i);
+                backtracking(9, i + 1, k, sum);
+                path.remove(Integer.valueOf(i));
+            }
+        }*/
+    //剪枝and优化
+    public void backtracking(int length, int startIndex, int k, int target, int sum) {
+        if (path.size() == k) {
+            if (sum == target) {
                 result.add(new ArrayList<>(path));
             }
             return;
         }
-        for (int i = startIndex; i <= length; i++) {
+        for (int i = startIndex; i <= length - (k - path.size()) + 1; i++) {
             path.add(i);
-            backtracking(9, i + 1, k, sum);
+            sum += i;
+            backtracking(9, i + 1, k, target, sum);
             path.remove(Integer.valueOf(i));
+            sum -= i;
         }
     }
 }
