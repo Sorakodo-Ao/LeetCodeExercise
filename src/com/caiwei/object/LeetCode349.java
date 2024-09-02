@@ -8,8 +8,8 @@ import java.util.*;
 public class LeetCode349 {
     @Test
     void test() {
-        int[] res = intersection(new int[]{1, 2, 2, 1}, new int[]{2, 2});
-        //int[] res = intersection(new int[]{4, 9, 5}, new int[]{9, 4, 9, 8, 4});
+        //int[] res = intersection(new int[]{1, 2, 2, 1}, new int[]{2, 2});
+        int[] res = intersection(new int[]{4, 9, 5}, new int[]{9, 4, 9, 8, 4});
         System.out.println(Arrays.toString(res));
     }
 
