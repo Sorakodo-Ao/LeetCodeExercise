@@ -2,8 +2,6 @@ package com.caiwei.object;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-
 //不同路径
 public class LeetCode62 {
     @Test
@@ -30,9 +28,9 @@ public class LeetCode62 {
         //确定上边界和左边界都是1
         for (int i = 0; i < m; i++) {
             dp[i][0] = 1;
-            for (int j = 0; j < n; j++) {
-                dp[0][j] = 1;
-            }
+        }
+        for (int j = 0; j < n; j++) {
+            dp[0][j] = 1;
         }
         for (int i = 1; i < m; i++) {
             for (int j = 1; j < n; j++) {
